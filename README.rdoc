@@ -7,6 +7,16 @@
 
 Web site of Macedonian Ruby Users Group (MKRUG)
 
+The idea of ruby.mk is to build a simple website using Sinatra
+http://www.sinatrarb.com/ ruby framework. Functionality of the site
+should be very basic, with features for posting announcements and
+aggregation of contents from other sites (twitter, blogs, bookmarks,
+etc) of MK ruby users. Any other ideas are also welcome and will be
+discussed. If you are interested in collaboration on this project 
+please write a private message and we will add you as a collaborator. 
+Then you can clone the repository and add your name in the License 
+copyright area and commit to check if everything works OK.
+
 == LICENSE:
 
 (The MIT License)
