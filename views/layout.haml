@@ -1,0 +1,14 @@
+!!!
+%html{ :lang => "en" }
+  %head
+    %title
+      = page_title
+    %link{ :href => "/css/style.css", :rel => "stylesheet", :type => "text/css" }
+    %script{ :type => "text/javascript", :src => "/js/app.js" }
+  %body
+    <a href="/">ruby.mk</a>
+    #header
+      .admin
+        %a{ :href => "/admin" }
+          admin
+    = yield

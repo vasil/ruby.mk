@@ -1,0 +1,10 @@
+%p
+  Are you sure you want to destroy "#{@post.title}"
+%form{ :method => "post", :action => "/admin/posts/#{@post.permalink}" }
+  %input{ :name => "_method", :value => "delete", :type => "hidden" }
+  %div
+    %button{ :type => "submit" }
+      Destroy
+    or go 
+    %a{ :href => "/admin/posts"}
+      back

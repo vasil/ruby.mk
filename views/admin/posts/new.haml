@@ -1,0 +1,26 @@
+- unless @post.errors.empty?
+  %h4
+    Errors:
+  %ul
+    - @post.errors.full_messages.each do |message|
+      %li
+        = message
+%form{ :method => "post", :action => "/admin/posts" }
+  %div
+    %label{ :for => "post_title" }
+      Title
+    %br
+    %input#post_title{ :name => "post[title]", :type => "text", :value => @post.title }
+  %div
+    %label{ :for => "post_body" }
+      Content
+    %br
+    %textarea#post_body{ :name => "post[content]", :rows => "20", :cols => "40" }
+      = @post.content
+  %div
+    %button{ :type => "submit" }
+      Save
+    or
+    %a{ :href => "/#{@post.permalink}" }
+      go back
+    \.

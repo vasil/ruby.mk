@@ -3,6 +3,7 @@
 * http://ruby.mk
 * http://github.com/mkrug/ruby.mk
 
+
 == DESCRIPTION:
 
 Web site of Macedonian Ruby Users Group (MKRUG)
@@ -16,6 +17,50 @@ discussed. If you are interested in collaboration on this project
 please write a private message and we will add you as a collaborator. 
 Then you can clone the repository and add your name in the License 
 copyright area and commit to check if everything works OK.
+
+
+== INSTALLATION
+
+- Install sinatra and sinatra-authorization gems as submodules
+
+    git submodule init
+    git submodule update
+
+- Install Data Mapper gems and database support
+
+    sudo gem install dm-core
+    sudo gem install dm-more
+
+    sudo apt-get install libsqlite3-dev # dependency for do_sqlite3
+    sudo gem install do_sqlite3 # data objects driver for SQLite3
+    sudo gem install do_mysql # data objects driver for MySQL
+
+- Setup database
+
+    Currently this project is setup to run on MySQL database:
+
+    mysql -u root -p # login to mysql console
+    CREATE DATABASE ruby_mk CHARACTER SET = utf8 # create ruby_mk database
+    DataMapper.setup(:default, 'mysql://root:pass@localhost/ruby_mk')
+
+    Then, go to irb and run:
+
+    irb
+    require 'lib/ruby_mk/models'
+    DataMapper.auto_migrate! # to create all tables or
+    DataMapper.auto_upgrade! # to create new added tables
+
+    For other database setups check out notes in lib/ruby_mk/models
+
+- Config application
+
+    cp config/app.yml.temp config/app.yml # copy and then edit app.yml with your credentials
+
+- Run application with thin server
+
+    thin start --rackup config.ru # run app with thin server
+    rackup config.ru -p 3000 # or with rackup
+
 
 == LICENSE:
 

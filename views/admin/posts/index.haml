@@ -1,0 +1,21 @@
+%h1
+  Admin posts
+%p
+  %a{:href => "/admin/posts/new"}
+    New post
+- if @posts.empty?
+  No posts.
+- else
+  %ul#posts
+    - for post in @posts
+      %li.post
+        %h2
+          %a{ :href => "/posts/#{post.permalink}" }
+            = post.title
+        = post.content
+        %br
+        %a{ :href => "/admin/posts/#{post.permalink}/edit" }
+          edit
+        &nbsp;|
+        %a{ :href => "/admin/posts/#{post.permalink}/delete", :onclick => "destroy(this); return false;" }
+          destroy

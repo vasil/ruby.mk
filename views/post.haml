@@ -1,0 +1,46 @@
+%h2
+  %a{ :href => post_path(@post) }
+    = @post.title
+= @post.content
+#comments
+  %ul
+    - for comment in @post.comments
+      %li
+        %p
+          = escape_html comment.content
+        %address
+          \&mdash;
+          = escape_html comment.author
+  - unless @comment.errors.empty?
+    %h4
+      Errors:
+    %ul
+      - @comment.errors.full_messages.each do |message|
+        %li
+          = message
+  %form{ :method => "post", :action => "#{post_path(@post)}/comments" }
+    %div
+      %label{ :for => "comment_author" }
+        Name
+      %br
+      %input#comment_author{ :name => "comment[author]", :type => "text", :value => @comment.author }
+    %div
+      %label{ :for => "comment_email" }
+        Email
+      %br
+      %input#comment_email{ :name => "comment[email]", :type => "text", :value => @comment.email }
+    %div
+      %label{ :for => "comment_url" }
+        URL
+      %br
+      %input#comment_url{ :name => "comment[url]", :type => "text", :value => @comment.url }
+    %div
+      %label{ :for => "comment_content" }
+        Your Comment
+      %br
+      %textarea#comment_content{ :name => "comment[content]", :rows => "6", :cols => "40" }
+        = @comment.content
+    %div
+      %button{ :type => "submit" }
+        Leave Comment
+

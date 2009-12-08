@@ -1,0 +1,9 @@
+%h1
+  "No news ia good news"
+%ul#posts
+  - for post in @posts
+    %li.post
+      %h2
+        %a{ :href => "posts/#{post.permalink}" }
+          = post.title
+      = post.content
