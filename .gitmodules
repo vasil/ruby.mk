@@ -3,4 +3,4 @@
 	url = git://github.com/sinatra/sinatra.git
 [submodule "vendor/sinatra-authorization"]
 	path = vendor/sinatra-authorization
-	url = git@github.com:dalibor/sinatra-authorization.git
+	url = git://github.com/dalibor/sinatra-authorization.git
