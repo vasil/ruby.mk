@@ -66,7 +66,7 @@ copyright area and commit to check if everything works OK.
 
 (The MIT License)
 
-Copyright (c) 2009 Dalibor Nasevic
+Copyright (c) 2009 Dalibor Nasevic, Peco Danajlovski
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -87,4 +87,4 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-test
+
