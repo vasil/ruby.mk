@@ -2,3 +2,6 @@
 *.db
 *.swp
 config/app.yml
+config/database.yml
+db/*
+nbproject

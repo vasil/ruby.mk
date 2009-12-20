@@ -5,3 +5,4 @@ require 'ruby_mk/posts'
 require 'ruby_mk/admin/posts'
 require 'ruby_mk/helpers'
 
+require 'sinatra/database-yml'

@@ -4,3 +4,6 @@
 [submodule "vendor/sinatra-authorization"]
 	path = vendor/sinatra-authorization
 	url = git://github.com/dalibor/sinatra-authorization.git
+[submodule "vendor/database-yml"]
+	path = vendor/database-yml
+	url = git://github.com/vasil/database-yml
