@@ -37,20 +37,30 @@ copyright area and commit to check if everything works OK.
 
 - Setup database
 
-    Currently this project is setup to run on MySQL database:
+This project now uses database-yml plugin.
+
+First make sure the database is correctly set and created.
+If you are using MySQL, you should first create database.
 
     mysql -u root -p # login to mysql console
     CREATE DATABASE ruby_mk CHARACTER SET = utf8 # create ruby_mk database
-    DataMapper.setup(:default, 'mysql://root:pass@localhost/ruby_mk')
+    
+Then, create a config/database.yml. It should look something like this:
 
-    Then, go to irb and run:
+    development:
+      adapter: sqlite3
+      database: db/ruby_mk_devel.sqlite3
 
-    irb
-    require 'lib/ruby_mk/models'
-    DataMapper.auto_migrate! # to create all tables or
-    DataMapper.auto_upgrade! # to create new added tables
+    test:
+      adapter: sqlite3
+      database: db/ruby_mk_test.sqlite3
 
-    For other database setups check out notes in lib/ruby_mk/models
+    production:
+      adapter: mysql
+      host: localhost
+      database: ruby_mk
+      username: ruby_mk
+      password: ruby_mk
 
 - Config application
 
@@ -60,7 +70,6 @@ copyright area and commit to check if everything works OK.
 
     thin start --rackup config.ru # run app with thin server
     rackup config.ru -p 3000 # or with rackup
-
 
 == LICENSE:
 
@@ -86,5 +95,3 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-

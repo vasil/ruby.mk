@@ -8,8 +8,7 @@ test:
 
 production:
   adapter: mysql
-  database: bach
-  encoding: utf8
+  host: bach
   database: ruby_mk
   username: ruby_mk
   password: ruby_mk
